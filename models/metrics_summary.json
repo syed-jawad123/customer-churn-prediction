@@ -1,0 +1,98 @@
+{
+    "best_model": "XGBoost",
+    "feature_names": [
+        "num__SeniorCitizen",
+        "num__tenure",
+        "num__MonthlyCharges",
+        "num__TotalCharges",
+        "num__ServiceCount",
+        "num__HasSecurityBundle",
+        "num__HasStreamingBundle",
+        "num__MonthlyToTotalRatio",
+        "num__HighRiskContractFiber",
+        "cat__gender_Male",
+        "cat__Partner_Yes",
+        "cat__Dependents_Yes",
+        "cat__PhoneService_Yes",
+        "cat__MultipleLines_No phone service",
+        "cat__MultipleLines_Yes",
+        "cat__InternetService_Fiber optic",
+        "cat__InternetService_No",
+        "cat__OnlineSecurity_No internet service",
+        "cat__OnlineSecurity_Yes",
+        "cat__OnlineBackup_No internet service",
+        "cat__OnlineBackup_Yes",
+        "cat__DeviceProtection_No internet service",
+        "cat__DeviceProtection_Yes",
+        "cat__TechSupport_No internet service",
+        "cat__TechSupport_Yes",
+        "cat__StreamingTV_No internet service",
+        "cat__StreamingTV_Yes",
+        "cat__StreamingMovies_No internet service",
+        "cat__StreamingMovies_Yes",
+        "cat__Contract_One year",
+        "cat__Contract_Two year",
+        "cat__PaperlessBilling_Yes",
+        "cat__PaymentMethod_Credit card (automatic)",
+        "cat__PaymentMethod_Electronic check",
+        "cat__PaymentMethod_Mailed check",
+        "cat__TenureCohort_Established_25-48m",
+        "cat__TenureCohort_Loyal_49-72m",
+        "cat__TenureCohort_New_0-12m"
+    ],
+    "test_sample_count": 800,
+    "models": {
+        "Logistic Regression": {
+            "accuracy": 0.7475,
+            "precision": 0.7063,
+            "recall": 0.7458,
+            "f1_score": 0.7255,
+            "roc_auc": 0.8327,
+            "confusion_matrix": {
+                "tn": 331,
+                "fp": 111,
+                "fn": 91,
+                "tp": 267
+            }
+        },
+        "Decision Tree": {
+            "accuracy": 0.75,
+            "precision": 0.7005,
+            "recall": 0.7709,
+            "f1_score": 0.734,
+            "roc_auc": 0.8184,
+            "confusion_matrix": {
+                "tn": 324,
+                "fp": 118,
+                "fn": 82,
+                "tp": 276
+            }
+        },
+        "Random Forest": {
+            "accuracy": 0.7362,
+            "precision": 0.6889,
+            "recall": 0.7486,
+            "f1_score": 0.7175,
+            "roc_auc": 0.8209,
+            "confusion_matrix": {
+                "tn": 321,
+                "fp": 121,
+                "fn": 90,
+                "tp": 268
+            }
+        },
+        "XGBoost": {
+            "accuracy": 0.7575,
+            "precision": 0.7204,
+            "recall": 0.7486,
+            "f1_score": 0.7342,
+            "roc_auc": 0.8302,
+            "confusion_matrix": {
+                "tn": 338,
+                "fp": 104,
+                "fn": 90,
+                "tp": 268
+            }
+        }
+    }
+}

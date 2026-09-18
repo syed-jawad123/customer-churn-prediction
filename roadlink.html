@@ -22,6 +22,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -49,7 +50,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(11, 15, 25, 0.9);
+            background: rgba(11, 15, 25, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--card-border);
             position: sticky;
@@ -57,12 +58,12 @@
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             color: var(--text-main);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .logo span {
@@ -72,14 +73,14 @@
         .contact-btn {
             background: var(--accent-green);
             color: white;
-            padding: 10px 18px;
+            padding: 10px 16px;
             border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 13px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
             transition: 0.3s ease;
         }
@@ -92,7 +93,7 @@
         .hero {
             position: relative;
             z-index: 5;
-            padding: 40px 5% 30px;
+            padding: 35px 5% 25px;
             text-align: center;
         }
 
@@ -109,9 +110,9 @@
         }
 
         .hero h1 {
-            font-size: 38px;
+            font-size: 34px;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.25;
             margin-bottom: 12px;
         }
 
@@ -123,26 +124,45 @@
 
         .hero p {
             color: var(--text-muted);
-            font-size: 16px;
+            font-size: 15px;
             max-width: 600px;
             margin: 0 auto 25px;
         }
 
+        /* Interactive Feature Action Buttons */
         .features {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto 35px;
         }
 
-        .feature-item {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 10px 18px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 600;
+        .feature-btn {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-btn:hover, .feature-btn:active {
+            background: rgba(230, 57, 70, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(230, 57, 70, 0.3);
         }
 
         /* Fleet Section */
@@ -292,7 +312,7 @@
         <div class="logo">
             🚗 ROAD LINK <span>MOTORS</span>
         </div>
-        <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20want%20to%20rent%20a%20car" class="contact-btn">
+        <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20want%20to%20rent%20a%20car" class="contact-btn" target="_blank">
             💬 WhatsApp Now
         </a>
     </header>
@@ -302,14 +322,21 @@
         <h1>Premium Rent A Car Service in <span>Rawalpindi</span></h1>
         <p>Self Drive & With Driver Cars Available at Best Daily & Monthly Rates.</p>
 
+        <!-- Fully Interactive Action Buttons -->
         <div class="features">
-            <div class="feature-item">⚡ Instant Booking</div>
-            <div class="feature-item">🛡️ Clean & Maintained Cars</div>
-            <div class="feature-item">🕒 24/7 Doorstep Delivery</div>
+            <a href="#fleet" class="feature-btn">
+                ⚡ Instant Booking (View Cars)
+            </a>
+            <a href="#fleet" class="feature-btn">
+                🛡️ Clean & Maintained Cars
+            </a>
+            <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20want%20doorstep%20car%20delivery%20in%20Rawalpindi" class="feature-btn" target="_blank">
+                🕒 24/7 Doorstep Delivery (Order)
+            </a>
         </div>
     </section>
 
-    <section class="fleet-container">
+    <section class="fleet-container" id="fleet">
         <h2 class="section-title">Available Fleet for Rent</h2>
 
         <div class="fleet-grid">
@@ -325,7 +352,7 @@
                         <span>👥 5 Seater</span> • <span>❄️ Chilled AC</span> • <span>⛽ Petrol</span>
                     </div>
                     <div class="price-tag">PKR 6,500 <span>/ Day</span></div>
-                    <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20am%20interested%20in%20renting%20Toyota%20Corolla/Yaris" class="book-btn">💬 Book via WhatsApp</a>
+                    <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20am%20interested%20in%20renting%20Toyota%20Corolla/Yaris" class="book-btn" target="_blank">💬 Book via WhatsApp</a>
                 </div>
             </div>
 
@@ -341,7 +368,7 @@
                         <span>👥 5 Seater</span> • <span>☀️ Sunroof</span> • <span>Leather Seats</span>
                     </div>
                     <div class="price-tag">PKR 10,000 <span>/ Day</span></div>
-                    <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20am%20interested%20in%20renting%20Honda%20Civic" class="book-btn">💬 Book via WhatsApp</a>
+                    <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20am%20interested%20in%20renting%20Honda%20Civic" class="book-btn" target="_blank">💬 Book via WhatsApp</a>
                 </div>
             </div>
 
@@ -357,7 +384,7 @@
                         <span>👥 4 Seater</span> • <span>❄️ Chilled AC</span> • <span>Best Mileage</span>
                     </div>
                     <div class="price-tag">PKR 4,000 <span>/ Day</span></div>
-                    <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20am%20interested%20in%20renting%20Suzuki%20Alto" class="book-btn">💬 Book via WhatsApp</a>
+                    <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20am%20interested%20in%20renting%20Suzuki%20Alto" class="book-btn" target="_blank">💬 Book via WhatsApp</a>
                 </div>
             </div>
 
@@ -373,7 +400,7 @@
                         <span>👥 7 Seater</span> • <span>4x4 Drive</span> • <span>VIP Protocol</span>
                     </div>
                     <div class="price-tag">PKR 25,000 <span>/ Day</span></div>
-                    <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20am%20interested%20in%20renting%20Toyota%20Fortuner/Prado" class="book-btn">💬 Book via WhatsApp</a>
+                    <a href="https://wa.me/923335972462?text=Hi%20Road%20Link%20Motors,%20I%20am%20interested%20in%20renting%20Toyota%20Fortuner/Prado" class="book-btn" target="_blank">💬 Book via WhatsApp</a>
                 </div>
             </div>
         </div>
